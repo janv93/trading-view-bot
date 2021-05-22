@@ -75,6 +75,7 @@ function createOrder(symbol, side) {
         query += '&quantity=' + quantityBitcoin * 2;
       } else {
         query += '&quantity=' + quantityBitcoin;
+        positionAlreadyOpen = true;
       }
       break;
     // future symbols with their own quantity
