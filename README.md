@@ -11,3 +11,5 @@ Webhook URL: the URL where this application runs on your localhost (you need por
 set the Inputs of the Pivot Reversal Strategy before creating the alert:  
 LeftBars: 2 (what I use for 1 min strategy)  
 RightBars: 2 (what I use)  
+
+When everything is set up, run npm install and npm start
