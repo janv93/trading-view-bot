@@ -1,4 +1,4 @@
-How to use:
+How to use:  
 You will need Tradingview Alerts to be sent from the Pivot Reversal Strategy via Webhooks. Costs like 15 bucks a month.  
 The alert message needs to have following parameters:  
 message: {{strategy.order.action}}  
