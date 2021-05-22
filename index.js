@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 if (dotenv) { dotenv.config(); }
 
-const leverage = 10;
+const leverage = 50;
 const quantityBitcoin = 0.001;
 let positionAlreadyOpen = false;
 

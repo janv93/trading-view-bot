@@ -1,3 +1,7 @@
+This bot uses TradingView Pivot Reversal Strategy and Binance API.  
+Check the _.env file and the following before you start running it.  
+
+
 How to use:  
 You will need Tradingview Alerts to be sent from the Pivot Reversal Strategy via Webhooks. Costs like 15 bucks a month.  
 The alert message needs to have following parameters:  
