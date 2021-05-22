@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 if (dotenv) { dotenv.config(); }
 
 const leverage = 50;
-const quantityBitcoin = 0.001;
+const quantityBitcoin = 0.01;
 let positionAlreadyOpen = false;
 
 const app = express();
