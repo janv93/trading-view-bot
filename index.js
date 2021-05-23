@@ -53,11 +53,15 @@ function setLeverage(symbol) {
 
 // Opening a long on market order is the same as closing short and vice versa, if the amount gets the position to 0.
 function openLongCloseShort(symbol) {
-  return createOrder(symbol, 'BUY').catch(err => handleError(err));
+  return createOrder(symbol, 'BUY').then(() => {
+    positionAlreadyOpen = true;
+  }).catch(err => handleError(err));
 }
 
 function openShortCloseLong(symbol) {
-  return createOrder(symbol, 'SELL').catch(err => handleError(err));
+  return createOrder(symbol, 'SELL').then(() => {
+    positionAlreadyOpen = true;
+  }).catch(err => handleError(err));
 }
 
 function createOrder(symbol, side) {
@@ -75,7 +79,6 @@ function createOrder(symbol, side) {
         query += '&quantity=' + quantityBitcoin * 2;
       } else {
         query += '&quantity=' + quantityBitcoin;
-        positionAlreadyOpen = true;
       }
       break;
     // future symbols with their own quantity
