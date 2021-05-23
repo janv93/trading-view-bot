@@ -54,12 +54,14 @@ function setLeverage(symbol) {
 // Opening a long on market order is the same as closing short and vice versa, if the amount gets the position to 0.
 function openLongCloseShort(symbol) {
   return createOrder(symbol, 'BUY').then(() => {
+    console.log('LONG position opened');
     positionAlreadyOpen = true;
   }).catch(err => handleError(err));
 }
 
 function openShortCloseLong(symbol) {
   return createOrder(symbol, 'SELL').then(() => {
+    console.log('SHORT position opened');
     positionAlreadyOpen = true;
   }).catch(err => handleError(err));
 }
