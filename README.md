@@ -9,6 +9,9 @@ message: {{strategy.order.action}}
 Webhook URL: the URL where this application runs on your localhost (you need port forwarding like 5000 to 80 because tradingview needs port 80)  
   
 set the Inputs of the Pivot Reversal Strategy before creating the alert:  
+
+What I use currently (probably suboptimal, still improving):
+
 timeframe: 3min
 LeftBars: 3
 RightBars: 0 
