@@ -16,4 +16,11 @@ timeframe: 15min
 LeftBars: 3  
 RightBars: 0  
 
-For Bitcoin use the "Bitcoin / ThetherUS PERPETUAL FUTURES BINANCE" chart, if you use the normal BTC/USDT binance chart it will not work because futures chart looks very different
+For Bitcoin use the "Bitcoin / ThetherUS PERPETUAL FUTURES BINANCE" chart, if you use the normal BTC/USDT binance chart it will not work because futures chart looks very different.  
+
+
+Issues with this bot:  
+If you use a small timeframe like 1 minute, the time from receiving the signal from TradingView to the position getting opened on Binance will take too much time so that you open the actual position at a different value than what the Pivot strategy had in mind. Especially when you go sideways it will make heavy losses.  
+
+Solution:
+Use a larger timeframe like 15min or higher so that processing time will be irrelevant. LeftBars/RightBars inputs will have to be adjusted for every timeframe.
