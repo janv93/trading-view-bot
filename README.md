@@ -10,7 +10,7 @@ Webhook URL: the URL where this application runs on your localhost (you need por
   
 set the Inputs of the Pivot Reversal Strategy before creating the alert:  
   
-What I use currently (probably suboptimal, still improving):  
+What I use currently use (probably suboptimal, still improving):  
   
 timeframe: 3min  
 LeftBars: 3  
