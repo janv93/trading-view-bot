@@ -20,7 +20,7 @@ For Bitcoin use the "Bitcoin / ThetherUS PERPETUAL FUTURES BINANCE" chart, if yo
 
 
 Issues with this bot:  
-- While the bot itself is profitable, binance charges a fee and takes a huge chunk of the trade. You need at least 0.04% per average trade profit, or it will make loss.
+- While the bot itself is profitable, binance charges a fee and takes a huge chunk of the trade. You need at least 0.04% per average trade profit, or it will make a loss.
 - If you use a small timeframe like 1 minute, the time from receiving the signal from TradingView to the position getting opened on Binance will take too much time so that you open the actual position at a different value than what the Pivot strategy had in mind. Especially when you go sideways it will make heavy losses.  
   
 Solution:  
