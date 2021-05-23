@@ -9,5 +9,8 @@ message: {{strategy.order.action}}
 Webhook URL: the URL where this application runs on your localhost (you need port forwarding like 5000 to 80 because tradingview needs port 80)  
   
 set the Inputs of the Pivot Reversal Strategy before creating the alert:  
-LeftBars: 2 (what I use for 1 min strategy)  
-RightBars: 2 (what I use)  
+timeframe: 3min
+LeftBars: 3
+RightBars: 0 
+
+For Bitcoin use the "Bitcoin / ThetherUS PERPETUAL FUTURES BINANCE" chart, if you use the normal BTC/USDT binance chart it will not work because futures chart looks very different
