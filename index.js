@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 if (dotenv) { dotenv.config(); }
 
 const leverage = 50;
-const quantityBitcoin = 0.01;
+const quantityBitcoin = 0.02;
 let positionAlreadyOpen = false;
 
 const app = express();
@@ -25,13 +25,29 @@ app.listen(port, () => {
 });
 
 function main(signal) {
-  setLeverage('BTC').catch(err => handleError(err));
-
-  if (signal === 'buy') {
-    openLongCloseShort('BTC').catch(err => handleError(err));
-  } else {
-    openShortCloseLong('BTC').catch(err => handleError(err));
-  }
+    setLeverage('BTC').then(() => {
+      if (signal === 'buy') {
+        openLongCloseShort('BTC').catch(err => {
+          handleError(err);
+          // resend request if error happened
+          setTimeout(() => {
+            main(signal);
+          }, 1000);
+        });
+      } else {
+        openShortCloseLong('BTC').catch(err => {
+          handleError(err);
+          setTimeout(() => {
+            main(signal);
+          }, 1000);
+        });
+      }
+    }).catch(err => {
+      handleError(err);
+      setTimeout(() => {
+        main(signal);
+      }, 1000);
+    });
 }
 
 function setLeverage(symbol) {
