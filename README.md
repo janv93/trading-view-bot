@@ -12,7 +12,7 @@ set the Inputs of the Pivot Reversal Strategy before creating the alert:
   
 What I use currently use (probably suboptimal, still improving):  
   
-timeframe: 3min  
+timeframe: 15min  
 LeftBars: 3  
 RightBars: 0  
 
