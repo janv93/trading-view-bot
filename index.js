@@ -25,12 +25,12 @@ app.listen(port, () => {
 });
 
 function main(signal) {
-  setLeverage('BTC');
+  setLeverage('BTC').catch(err => handleError(err));
 
   if (signal === 'buy') {
-    openLongCloseShort('BTC');
+    openLongCloseShort('BTC').catch(err => handleError(err));
   } else {
-    openShortCloseLong('BTC');
+    openShortCloseLong('BTC').catch(err => handleError(err));
   }
 }
 
