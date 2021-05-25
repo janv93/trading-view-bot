@@ -6,8 +6,8 @@ const dotenv = require('dotenv');
 if (dotenv) { dotenv.config(); }
 
 const symbol = 'MATIC';
-const leverage = 50;
-const quantity = 50;
+const leverage = 20;
+const quantity = 150;
 let positionAlreadyOpen = false;
 
 const app = express();

@@ -13,9 +13,9 @@ set the Inputs of the Pivot Reversal Strategy before creating the alert:
 What I use currently use (probably suboptimal, still improving):  
   
 symbol: MATIC  
-timeframe: 1 min  
-LeftBars: 4  
-RightBars: 1  
+timeframe: 15 min  
+LeftBars: 2  
+RightBars: 5  
 
 Use the "[Symbol] / ThetherUS PERPETUAL FUTURES BINANCE" chart, if you use the normal [Symbol]/USDT binance chart it will not work because futures chart looks very different.  
 
