@@ -12,11 +12,12 @@ set the Inputs of the Pivot Reversal Strategy before creating the alert:
   
 What I use currently use (probably suboptimal, still improving):  
   
-timeframe: 15min  
-LeftBars: 3  
-RightBars: 0  
+symbol: MATIC  
+timeframe: 1 min  
+LeftBars: 4  
+RightBars: 1  
 
-For Bitcoin use the "Bitcoin / ThetherUS PERPETUAL FUTURES BINANCE" chart, if you use the normal BTC/USDT binance chart it will not work because futures chart looks very different.  
+Use the "[Symbol] / ThetherUS PERPETUAL FUTURES BINANCE" chart, if you use the normal [Symbol]/USDT binance chart it will not work because futures chart looks very different.  
 
 
 Issues with this bot:  

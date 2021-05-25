@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 if (dotenv) { dotenv.config(); }
 
+const symbol = 'MATIC';
 const leverage = 50;
-const quantityBitcoin = 0.02;
+const quantity = 50;
 let positionAlreadyOpen = false;
 
 const app = express();
@@ -25,29 +26,29 @@ app.listen(port, () => {
 });
 
 function main(signal) {
-    setLeverage('BTC').then(() => {
-      if (signal === 'buy') {
-        openLongCloseShort('BTC').catch(err => {
-          handleError(err);
-          // resend request if error happened
-          setTimeout(() => {
-            main(signal);
-          }, 1000);
-        });
-      } else {
-        openShortCloseLong('BTC').catch(err => {
-          handleError(err);
-          setTimeout(() => {
-            main(signal);
-          }, 1000);
-        });
-      }
-    }).catch(err => {
-      handleError(err);
-      setTimeout(() => {
-        main(signal);
-      }, 1000);
-    });
+  setLeverage(symbol).then(() => {
+    if (signal === 'buy') {
+      openLongCloseShort(symbol).catch(err => {
+        handleError(err);
+        // resend request if error happened
+        setTimeout(() => {
+          main(signal);
+        }, 1000);
+      });
+    } else {
+      openShortCloseLong(symbol).catch(err => {
+        handleError(err);
+        setTimeout(() => {
+          main(signal);
+        }, 1000);
+      });
+    }
+  }).catch(err => {
+    handleError(err);
+    setTimeout(() => {
+      main(signal);
+    }, 1000);
+  });
 }
 
 function setLeverage(symbol) {
@@ -91,16 +92,12 @@ function createOrder(symbol, side) {
     + '&side=' + side
     + '&type=' + 'MARKET';
 
-  switch (symbol) {
-    case 'BTC':
-      if (positionAlreadyOpen) {
-        query += '&quantity=' + quantityBitcoin * 2;
-      } else {
-        query += '&quantity=' + quantityBitcoin;
-      }
-      break;
-    // future symbols with their own quantity
+  if (positionAlreadyOpen) {
+    query += '&quantity=' + quantity * 2;
+  } else {
+    query += '&quantity=' + quantity;
   }
+
 
   const hmac = createHmac(query);
 
