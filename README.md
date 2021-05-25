@@ -14,7 +14,7 @@ Webhook URL: the URL where this application runs on your localhost (you need por
 ## Set the Inputs of the Pivot Reversal Strategy before creating the alert  
 What I use currently use (probably suboptimal, still improving):  
 symbol: MATIC  
-timeframe: 15 min  
+timeframe: 1 h  
 LeftBars: 2  
 RightBars: 5  
 
