@@ -18,11 +18,3 @@ LeftBars: 4
 RightBars: 1  
 
 Use the "[Symbol] / ThetherUS PERPETUAL FUTURES BINANCE" chart, if you use the normal [Symbol]/USDT binance chart it will not work because futures chart looks very different.  
-
-
-Issues with this bot:  
-- While the bot itself is profitable, binance charges a fee and takes a huge chunk of the trade. You need at least 0.04% per average trade profit, or it will make a loss.
-- If you use a small timeframe like 1 minute, the time from receiving the signal from TradingView to the position getting opened on Binance will take too much time so that you open the actual position at a different value than what the Pivot strategy had in mind. Especially when you go sideways it will make heavy losses.  
-  
-Solution:  
-Use a larger timeframe like 15min or higher so that processing time will be irrelevant. LeftBars/RightBars inputs will have to be adjusted for every timeframe.
