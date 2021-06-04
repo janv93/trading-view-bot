@@ -1,6 +1,6 @@
 This bot uses TradingView Pivot Reversal Strategy and Binance API.  
 Check the _.env file and the following before you start running it.  
-
+asd
 
 # How to use:  
   
