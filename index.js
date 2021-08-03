@@ -7,8 +7,9 @@ if (dotenv) { dotenv.config(); }
 
 const symbol = 'MATIC';
 const leverage = 20;
-const quantity = 150;
+const quantity = 50;
 let positionAlreadyOpen = false;
+let lastSignal = '';
 
 const app = express();
 const port = 5000;
@@ -27,21 +28,25 @@ app.listen(port, () => {
 
 function main(signal) {
   setLeverage(symbol).then(() => {
-    if (signal === 'buy') {
-      openLongCloseShort(symbol).catch(err => {
-        handleError(err);
-        // resend request if error happened
-        setTimeout(() => {
-          main(signal);
-        }, 1000);
-      });
-    } else {
-      openShortCloseLong(symbol).catch(err => {
-        handleError(err);
-        setTimeout(() => {
-          main(signal);
-        }, 1000);
-      });
+    if (signal !== lastSignal) {
+      lastSignal = signal;
+
+      if (signal === 'BUY') {
+        openLongCloseShort(symbol).catch(err => {
+          handleError(err);
+          // resend request if error happened
+          setTimeout(() => {
+            main(signal);
+          }, 1000);
+        });
+      } else {
+        openShortCloseLong(symbol).catch(err => {
+          handleError(err);
+          setTimeout(() => {
+            main(signal);
+          }, 1000);
+        });
+      }
     }
   }).catch(err => {
     handleError(err);
