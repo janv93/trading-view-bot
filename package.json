@@ -1,5 +1,5 @@
 {
-  "name": "tradingbot",
+  "name": "trading-view-bot",
   "version": "1.0.0",
   "description": "trading bot for binance futures",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/janv93/MuchTweetVeryStonks.git"
+    "url": "git+https://github.com/janv93/trading-view-bot.git"
   },
   "keywords": [
     "bitcoin",
