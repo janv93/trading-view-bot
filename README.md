@@ -14,7 +14,7 @@ alertcondition(ma_down, title = "Sell Condition", message = "SELL")
 
 Set the Options to "Once Per Bar Close".
 
-Webhook URL: the URL where this application runs on your localhost (you need port forwarding like 5000 to 80 because tradingview needs port 80), there are several tools to find out your IPv4 address.
+Webhook URL: the URL where this application runs on your localhost (you need port forwarding like 5000 to 80), there are several tools to find out your IPv4 address.
 
 
   
